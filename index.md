@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Just2 Hello World!
+title: XuehuiHe blog
 ---
 {% include JB/setup %}
 
