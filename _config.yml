@@ -9,10 +9,10 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : WOWCINDER BLOG
+title : XuehuiHe BLOG
 tagline: Site Tagline
 author :
-  name : wowcinder
+  name : XuehuiHe
   email : xuehuihe.java@gmail.com
   github : wowcinder
   #twitter : username
@@ -125,4 +125,4 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
-  
+  excerpt_separator: "\n\n"

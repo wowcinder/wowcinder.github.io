@@ -203,7 +203,7 @@ Example:
 
 This page will be available at `http://yourdomain.com/people/bob/essay.html`
 
-
+<!-- more -->
 **Recommended Pages**  
 
 - **index.html**  

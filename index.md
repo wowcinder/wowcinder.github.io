@@ -1,9 +1,19 @@
 ---
-layout: page
+layout: default
 title: Just2 Hello World!
-tagline: Supporting tagline
 ---
 {% include JB/setup %}
+
+{% for post in site.posts limit:5 %}
+## [{{ post.title }}]({{ post.url }})
+<ul class="tag_box inline">
+{% assign categories_list = post.categories %}
+{% include JB/categories_list %}
+{% assign tags_list = post.tags %}  
+{% include JB/tags_list %}
+</ul>
+{{ post.excerpt }}
+{% endfor %}
 
 Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
 
