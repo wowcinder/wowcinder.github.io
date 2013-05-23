@@ -12,6 +12,5 @@ title: XuehuiHe blog
 {% assign tags_list = post.tags %}  
 {% include JB/tags_list %}
 </ul>
-
 {{ post.content | split:"<!--more-->" | first  }}
 {% endfor %}
