@@ -1,0 +1,80 @@
+---
+layout: post
+category : log4j
+tags : [java,log4j]
+---
+{% include JB/setup %}
+###Logger hierarchy
+>+ Named Hierarchy
+    A logger is said to be an ancestor of another logger if its name followed by a dot is a prefix of the descendant logger name. A logger is said to be a parent of a child logger if there are no ancestors between itself and the descendant logger.  
+
+>+ root logger
+>>1. it always exists,
+>>2. it cannot be retrieved by name.  
+
+>+ Level Inheritance
+	The inherited level for a given logger C, is equal to the first non-null level in the logger hierarchy, starting at C and proceeding upwards in the hierarchy towards the root logger.  
+
+>+ Basic Selection Rule
+	A log request of level p in a logger with (either assigned or inherited, whichever is appropriate) level q, is enabled if p >= q.
+	DEBUG < INFO < WARN < ERROR < FATAL.  
+{% highlight java %}
+   // get a logger instance named "com.foo"
+   Logger  logger = Logger.getLogger("com.foo");
+
+   // Now set its level. Normally you do not need to set the
+   // level of a logger programmatically. This is usually done
+   // in configuration files.
+   logger.setLevel(Level.INFO);
+
+   Logger barlogger = Logger.getLogger("com.foo.Bar");
+
+   // This request is enabled, because WARN >= INFO.
+   logger.warn("Low fuel level.");
+
+   // This request is disabled, because DEBUG < INFO.
+   logger.debug("Starting search for nearest gas station.");
+
+   // The logger instance barlogger, named "com.foo.Bar",
+   // will inherit its level from the logger named
+   // "com.foo" Thus, the following request is enabled
+   // because INFO >= INFO.
+   barlogger.info("Located nearest gas station.");
+
+   // This request is disabled, because DEBUG < INFO.
+   barlogger.debug("Exiting gas station search");
+{% endhighlight %}
+
+###Appenders
+	More than one appender can be attached to a logger.  
+	Each enabled logging request for a given logger will be forwarded to all the appenders in that logger as well as the appenders higher in the hierarchy.   
+>+ Appender Additivity
+	The output of a log statement of logger C will go to all the appenders in C and its ancestors. This is the meaning of the term "appender additivity".
+
+	However, if an ancestor of logger C, say P, has the additivity flag set to false, then C's output will be directed to all the appenders in C and its ancestors upto and including P but not the appenders in any of the ancestors of P.
+
+	Loggers have their additivity flag set to true by default.  
+
+`log4j.additivity.logName = false`  
+or
+{% highlight java %}
+log.setAdditivity(false);
+{% endhighlight %}
+###PatternLayout
+>Each conversion specifier starts with a percent sign (%) and is followed by optional format modifiers and a conversion character.
+>>1. The conversion character specifies the type of data, e.g. category, priority, date, thread name.
+>>2. The format modifiers control such things as field width, padding, left and right justification.
+	%-5p means the priority of the logging event should be left justified to a width of five characters  
+>+ Conversion Character  
+>>[Conversion Character](http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html)
+###Configuration
+>+ BasicConfigurator.configure();
+>>1. creates a rather simple log4j setup
+>>2. add to the root logger a ConsoleAppender
+>>3. The output will be formatted using a PatternLayout set to the pattern "%-4r \[%t\] %-5p %c %x - %m%n"
+>>4. by default, the root logger is assigned to Level.DEBUG
+
+
+
+
+
