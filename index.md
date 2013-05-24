@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Just2 Hello World!
+title: XuehuiHe blog
 ---
 {% include JB/setup %}
 
@@ -12,6 +12,5 @@ title: Just2 Hello World!
 {% assign tags_list = post.tags %}  
 {% include JB/tags_list %}
 </ul>
-
 {{ post.content | split:"<!--more-->" | first  }}
 {% endfor %}
