@@ -43,7 +43,8 @@ tags : [gwt,eclipse,maven]
 	            </plugin>
 	        </plugins>
 	    </pluginManagement>
-
+###配置eclipse gwt plugin
+>google web toolkit 中rmove junit module
 
 
 
