@@ -47,6 +47,7 @@ tags : [gwt,eclipse,maven]
 >google web toolkit 中rmove junit module
 ###备注
 >[eclipse no maven plugins](http://wiki.eclipse.org/M2E_plugin_execution_not_covere)
+
 >[spring source github](https://github.com/SpringSource)
 
 
