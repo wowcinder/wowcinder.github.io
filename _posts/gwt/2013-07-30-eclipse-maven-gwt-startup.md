@@ -9,6 +9,10 @@ tags : [gwt,eclipse,maven]
 ###建立maven gwt project
 	mvn archetype:generate    -DarchetypeGroupId=org.codehaus.mojo    -DarchetypeArtifactId=gwt-maven-plugin    -DarchetypeVersion=2.5.1
 ###修改project的pom.xml
+
+
+<!--more-->
+
 	<pluginManagement>
 	        <plugins>
 	            <!--This plugin's configuration is used to store Eclipse m2e settings 
@@ -52,4 +56,3 @@ tags : [gwt,eclipse,maven]
 
 
 
-<!--more-->
