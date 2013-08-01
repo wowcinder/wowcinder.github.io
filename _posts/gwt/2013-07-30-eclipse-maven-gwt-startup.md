@@ -54,5 +54,10 @@ tags : [gwt,eclipse,maven]
 
 >[spring source github](https://github.com/SpringSource)
 
-
-
+###注意事项
+>>1.eclipse gwt plugin 的compile中间件在src/main中,maven在target中，在换了jar包，中间件可能存在不兼容的错误，需要先清理
+>>2.gwt 验证 jar包只能使用4.3以下。RPC接口中需要声明Support
+>>3.eclipse gwt plugin 安装SDKs需要下载完整的SDK的zip
+>>4.在使用泛型时，String不能正确解析,建议使用Provider包装。
+>>5.引入source code 需要在xml中声明super path
+>>6.maven gwt debug 运行mvn debug 然后debug as a remote java application
