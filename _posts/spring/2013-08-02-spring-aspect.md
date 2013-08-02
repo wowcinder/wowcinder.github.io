@@ -9,4 +9,7 @@ tags : [spring,aspect]
 >>aspect的优先级可以通过现实Ordered口接或者用使@Order注解现实。
 >>spring xml 配置中可以设置order属性
 
+<!-- more -->
+
+
 
