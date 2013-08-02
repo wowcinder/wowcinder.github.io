@@ -62,3 +62,18 @@ tags : [gwt,eclipse,maven]
 >>5.引入source code 需要在xml中声明super path
 >>6.maven gwt debug 运行mvn debug 然后debug as a remote java application
 >>7.使用延迟绑定EventBus使使用com.google.web.bindery.event.shared.EventBus
+>>8.exception SerializationPolicy
+	GWT keeps track of a set of types which can be serialized and sent to the client. your.class.Type apparently was not on this list. Lists like this are stored in .gwt.rpc files. These lists are generated, so editing these lists is probably useless. How these lists are generated is a bit unclear, but you can try the following things:
+	
+	Make sure your.class.Type implements java.io.Serializable
+	Make sure your.class.Type has a public no-args constructor
+	Make sure the members of your.class.Type do the same
+	
+	Check if your program does not contain collections of a non-serializable type, e.g. ArrayList<Object>. If such a collection contains your.class.Type and is serialized, this error will occur.
+	
+	Make your.class.Type implement IsSerializable. This marker interface was specifically meant for classes that should be sent to the client. This didn't work for me, but my class also implemented Serializable, so maybe both interfaces don't work well together.
+	
+	Another option is to create a dummy class with your.class.Type as a member, and add a method to your RPC interface that gets and returns the dummy. This forces the GWT compiler to add the dummy class and its members to the serialization whitelist.
+
+
+
