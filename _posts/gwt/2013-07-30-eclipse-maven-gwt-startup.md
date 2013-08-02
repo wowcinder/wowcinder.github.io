@@ -61,3 +61,4 @@ tags : [gwt,eclipse,maven]
 >>4.在使用泛型时，String不能正确解析,建议使用Provider包装。
 >>5.引入source code 需要在xml中声明super path
 >>6.maven gwt debug 运行mvn debug 然后debug as a remote java application
+>>7.使用延迟绑定EventBus使使用com.google.web.bindery.event.shared.EventBus
