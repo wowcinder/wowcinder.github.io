@@ -17,6 +17,7 @@ tags : [hibernate]
 	session.clean()
 	session.refresh(object)
 	session.merge(object)
+### test
 
 
 <!--more-->
