@@ -18,6 +18,9 @@ tags : [hibernate]
 	session.refresh(object)
 	session.merge(object)
 	
+=======
+
+>>>>>>> branch 'master' of git@github.com:wowcinder/wowcinder.github.io.git
 
 
 <!--more-->
