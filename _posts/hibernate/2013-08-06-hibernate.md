@@ -9,7 +9,6 @@ tags : [hibernate]
 >@ManyToOne 默认fetch:EAGER  @JoinColumn
 ###删除 
 >建议先load后删除，方便使用CascadeType.REMOVE
-<<<<<<< HEAD
 ###load get
 >load方式检索不到的话会抛出org.hibernate.ObjectNotFoundException异常
 >get方法检索不到的话会返回null
