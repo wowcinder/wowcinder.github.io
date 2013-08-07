@@ -25,6 +25,12 @@ tags : [hibernate]
 + *@ElementCollection*关联的是enmu时，默认是tinyint,可以使用@Enumerated(EnumType.STRING)在表中用字符
 + 当你的Enum中有自定义字段，并且你希望用该字段作为hibernate持久化的值的时候，就需要用到hibernate的自定义映射类型UserType
 + 有序的对象可以使用@OrderColumn,@IndexColumn
++ *@CollectionId*可以给*@ElementCollection*添加ID
+###@IdClass
++ pk可以是关联对象的字段,可应通过@IdClass引用
++ *@ID* 可以加在@ManyToOne等上面
++ *@MapsId* 在@EmbeddedId中启到相同的作用  也可以使用@JoinColumns
++ *SimpleParentEmbedded*可以不用@IdClass
 ###CascadeTest
 + DETACH对应缓存的数据的删除等。
 ###时间
@@ -33,7 +39,8 @@ tags : [hibernate]
 + 默认的为@Basic
 ###@Parent
 + IdClass可以用@Parent引用owner
-
+###@XXXToOne
++ 默认@JoinColumn id attribute mapped by join column default
 ###其他
 + [man](http://www.mkyong.com/hibernate/hibernate-fetching-strategies-examples)
 + [JPA注解](http://www.360doc.com/content/07/1224/21/15643_921681.shtml)
