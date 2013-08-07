@@ -21,7 +21,8 @@ tags : [hibernate,spring]
 >megre 可能也更新关联的对象
 ###关联
 >hibernate 自动建表的关联一般是外键，但实际表结构不一定是外键
-
+###fetch
+>[man](http://www.mkyong.com/hibernate/hibernate-fetching-strategies-examples)
 <!--more-->
 
 
