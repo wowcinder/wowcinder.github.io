@@ -17,7 +17,8 @@ tags : [hibernate,spring]
 	session.clean()
 	session.refresh(object)
 	session.merge(object)
-### test
+### megre
+>megre 可能也更新关联的对象
 
 
 <!--more-->
