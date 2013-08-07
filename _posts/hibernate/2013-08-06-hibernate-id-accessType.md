@@ -1,7 +1,7 @@
 ---
 layout: post
 category : java
-tags : [hibernate,\@ID,\@AccessType]
+tags : [hibernate]
 ---
 {% include JB/setup %}
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 category : java
-tags : [hibernate,spring]
+tags : [hibernate]
 ---
 {% include JB/setup %}
 
