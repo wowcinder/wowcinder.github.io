@@ -8,6 +8,7 @@ tags : [hibernate]
 ###关联
 >\@OneToMany  mappedBy
 >@ManyToOne 默认fetch:EAGER  @JoinColumn
+>hibernate 自动建表的关联一般是外键，但实际表结构不一定是外键
 ###删除 
 >建议先load后删除，方便使用CascadeType.REMOVE
 ###load get
@@ -19,10 +20,25 @@ tags : [hibernate]
 	session.merge(object)
 ### megre
 >megre 可能也更新关联的对象
-###关联
->hibernate 自动建表的关联一般是外键，但实际表结构不一定是外键
-###fetch
->[man](http://www.mkyong.com/hibernate/hibernate-fetching-strategies-examples)
+###Arraytest
++ 当关联的不是entity对象时可以用@ElementCollection
++ *@ElementCollection*关联的是enmu时，默认是tinyint,可以使用@Enumerated(EnumType.STRING)在表中用字符
++ 当你的Enum中有自定义字段，并且你希望用该字段作为hibernate持久化的值的时候，就需要用到hibernate的自定义映射类型UserType
++ 有序的对象可以使用@OrderColumn,@IndexColumn
+###CascadeTest
++ DETACH对应缓存的数据的删除等。
+###时间
++ *@Temporal*指定是Date,Time,Timestamp
+###@Basic
++ 默认的为@Basic
+###@Parent
++ IdClass可以用@Parent引用owner
+
+###其他
++ [man](http://www.mkyong.com/hibernate/hibernate-fetching-strategies-examples)
++ [JPA注解](http://www.360doc.com/content/07/1224/21/15643_921681.shtml)
+
+
 <!--more-->
 
 
