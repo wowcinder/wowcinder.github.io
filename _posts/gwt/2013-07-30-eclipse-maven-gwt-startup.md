@@ -74,6 +74,8 @@ tags : [gwt,eclipse,maven]
 	Make your.class.Type implement IsSerializable. This marker interface was specifically meant for classes that should be sent to the client. This didn't work for me, but my class also implemented Serializable, so maybe both interfaces don't work well together.
 	
 	Another option is to create a dummy class with your.class.Type as a member, and add a method to your RPC interface that gets and returns the dummy. This forces the GWT compiler to add the dummy class and its members to the serialization whitelist.
+>>9.Interface SerializationPolicy
+	确保有一个实现
 
 
 
