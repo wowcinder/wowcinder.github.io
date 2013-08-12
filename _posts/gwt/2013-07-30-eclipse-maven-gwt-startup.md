@@ -76,6 +76,6 @@ tags : [gwt,eclipse,maven]
 	Another option is to create a dummy class with your.class.Type as a member, and add a method to your RPC interface that gets and returns the dummy. This forces the GWT compiler to add the dummy class and its members to the serialization whitelist.
 >>9.Interface SerializationPolicy
 	确保有一个实现
-
+>>10.grid 如果不能正确选择，往往是hash eq 出了问题.
 
 
