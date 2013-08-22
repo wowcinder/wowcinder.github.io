@@ -41,6 +41,11 @@ tags : [hibernate]
 + IdClass可以用@Parent引用owner
 ###@XXXToOne
 + 默认@JoinColumn id attribute mapped by join column default
+###继承
++ 查询@org.hibernate.annotations.Entity(polymorphisms = PolymorphismType.EXPLICIT)
++ 或者Restrictions.eq("class", A.class)
+###left join
++ createAlias("menus", "menus", Criteria.LEFT_JOIN)
 ###其他
 + [man](http://www.mkyong.com/hibernate/hibernate-fetching-strategies-examples)
 + [JPA注解](http://www.360doc.com/content/07/1224/21/15643_921681.shtml)
